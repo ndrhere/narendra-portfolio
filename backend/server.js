@@ -23,11 +23,11 @@ app.use("/api/contact", contactRoute)
 
 if(process.env.NODE_ENV === "production") {
   //server our react app
-  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
   // __dirname is the root directory of our project.
 
   app.get(/.*/, (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+    res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
   })
   
 }
