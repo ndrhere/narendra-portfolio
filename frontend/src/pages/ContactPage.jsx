@@ -49,7 +49,7 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-1 gap-8">
           <div className="card bg-base-100 shadow-xl">
             <div className="card-body space-y-4">
               <h2 className="text-xl font-bold">Send Me a Message</h2>
@@ -113,7 +113,7 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="card bg-base-100 shadow-xl">
+          {/* <div className="card bg-base-100 shadow-xl">
             <div className="card-body space-y-6">
               <h2 className="text-xl font-bold">Direct Contact</h2>
 
@@ -162,7 +162,7 @@ const ContactPage = () => {
                 I usually respond within <b>24 hours</b>.
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -41,9 +41,9 @@ const HomePage = () => {
               Hire Me
             </a>
 
-            <button className="btn btn-secondary  px-6 border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white">
+            <a href="/contact-details"className="btn btn-secondary  px-6 border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white">
               Let's Talk
-            </button>
+            </a>
           </div>
 
 

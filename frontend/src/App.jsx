@@ -6,6 +6,7 @@ import ServicesPage from "./pages/ServicesPage.jsx";
 import PortfolioFormPage from "./pages/PortfolioFormPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import ContactDetailsPage from "./pages/ContactDetailsPage.jsx";
 import PortfolioPage from "./pages/PortfolioPage.jsx";
 import { Toaster } from "react-hot-toast";
 import { useThemeStore } from "./store/useThemeStore.js";
@@ -20,7 +21,7 @@ const App = () => {
       <Navbar />
       <main className={isHomePage ? "" : "pt-20 bg-base-200"}>
         <Routes>
-          
+
           <Route path="/admin/login" element={<AdminLogin/>}></Route>
 
           <Route path="/" element={<HomePage />}></Route>
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/portfolio" element={<PortfolioPage />}></Route>
           <Route path="/about" element={<AboutPage />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
+          <Route path="/contact-details" element={<ContactDetailsPage />}></Route>
         </Routes>
       </main>
       <Toaster />
