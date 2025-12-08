@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { createProject, editProject, getProject } from "../lib/api.js";
+import { createProject, editProject, getAdminUser, getProject } from "../lib/api.js";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -18,6 +18,14 @@ const PortfolioFormPage = () => {
 
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
+
+  const {data} = useQuery({
+    queryKey: ["admin"],
+    queryFn: getAdminUser
+  })
+  console.log("Admin-data", data);
+
+  const isAdmin = Boolean(data?.user?._id)
 
   const { data: project } = useQuery({
     queryKey: ["project"],
@@ -68,6 +76,11 @@ const PortfolioFormPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if(!isAdmin) {
+      toast.error("Not Allowed, Admin only.");
+      return;
+    }
 
     const formData = new FormData();
     formData.append("project_name", form.project_name);

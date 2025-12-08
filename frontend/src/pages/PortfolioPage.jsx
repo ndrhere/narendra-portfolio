@@ -1,9 +1,10 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { deleteProject, getAllProjects } from "../lib/api.js";
+import { deleteProject, getAdminUser, getAllProjects } from "../lib/api.js";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FiEdit2, FiTrash2 } from "react-icons/fi";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 
 const PortfolioPage = () => {
@@ -16,7 +17,13 @@ const PortfolioPage = () => {
     
   });
    
-  
+  const {data} = useQuery({
+    queryKey: ["admin"],
+    queryFn: getAdminUser
+  })
+
+  const isAdmin = Boolean(data?.user?._id)
+
 
   const { mutate: deleteProjectMutation, isPending } = useMutation({
     mutationFn: deleteProject,
@@ -26,6 +33,11 @@ const PortfolioPage = () => {
   });
 
   const handleDelete = (id) => {
+    if(!isAdmin) {
+      toast.error("Not Allowed, Admin only.");
+      return;
+    }
+
      if (!confirm("Delete this project?")) return;
       deleteProjectMutation(id);
   }

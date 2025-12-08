@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import projectRoute from "./routes/projectRoute.js";
 import contactRoute from "./routes/contactRoute.js";
+import authRoute from "./routes/authRoute.js";
 // import dotenv from "dotenv";
 // dotenv.config();
 import "dotenv/config";
@@ -18,6 +19,7 @@ app.use(cors({
 }));
 
 
+app.use("/api/auth", authRoute)
 app.use("/api/project", projectRoute)
 app.use("/api/contact", contactRoute)
 

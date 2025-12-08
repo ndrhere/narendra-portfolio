@@ -1,6 +1,21 @@
 import { axiosInstance } from "./axios.js";
 
 
+export const getAdminUser = async () => {
+   try {
+    const res = await axiosInstance.get("/auth/me");
+    return res.data
+   } catch(error) {
+     console.log("Error in getAdminUser", error);
+     return null;
+   }
+}
+
+export const adminLogin = async (loginData) => {
+   const response = await axiosInstance.post("/auth", loginData)
+   return response.data
+}
+
 export const getAllProjects = async () => {
    const response = await axiosInstance.get("/project");
    return response.data
