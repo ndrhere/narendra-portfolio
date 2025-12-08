@@ -37,7 +37,7 @@ const HomePage = () => {
 
           {/* BUTTONS */}
           <div className="flex gap-4 mt-8">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary px-6">
+            <a href="/resume(2).pdf" target="_blank" rel="noopener noreferrer" className="btn btn-secondary px-6">
               Hire Me
             </a>
 
