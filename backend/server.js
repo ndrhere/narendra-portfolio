@@ -3,6 +3,7 @@ import cors from "cors";
 import projectRoute from "./routes/projectRoute.js";
 import contactRoute from "./routes/contactRoute.js";
 import authRoute from "./routes/authRoute.js";
+import cookieParser from "cookie-parser";
 // import dotenv from "dotenv";
 // dotenv.config();
 import "dotenv/config";
@@ -17,6 +18,7 @@ app.use(cors({
     origin: "http://localhost:5173",
     credentials: true
 }));
+app.use(cookieParser());
 
 
 app.use("/api/auth", authRoute)
