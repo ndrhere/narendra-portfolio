@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram , FaLinkedinIn } from "react-icons/fa";
 
 const HomePage = () => {
   return (
@@ -50,7 +50,7 @@ const HomePage = () => {
           {/* SOCIAL ICONS */}
             <div className="flex items-center gap-4 mt-20 pt-12">
               <a
-                href="https://facebook.com/yourprofile"
+                href="https://www.facebook.com/narendra.ndr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline btn-sm rounded-full p-2"
@@ -59,16 +59,16 @@ const HomePage = () => {
               </a>
 
               <a
-                href="https://twitter.com/yourprofile"
+                href="https://www.instagram.com/itsme_ndr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline btn-sm rounded-full p-2"
               >
-                <FaTwitter size={16} />
+                <FaInstagram  size={16} />
               </a>
 
               <a
-                href="https://linkedin.com/in/yourprofile"
+                href="https://linkedin.com/in/narendra-chawda-0165a715b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline btn-sm rounded-full p-2"
